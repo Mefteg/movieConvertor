@@ -1,4 +1,4 @@
 movieConvertor
 ==============
 
-Allow movies to be played on Philips TV
+Allows movies to be played on Philips TV
