@@ -77,7 +77,7 @@ public class ViewMain extends JFrame implements ActionListener,
 			@Override
 			public String getDescription() {
 				// TODO Auto-generated method stub
-				return "*.avi, *.mp4";
+				return "*.avi, *.mp4, *.mov";
 			}
 			
 			@Override
@@ -88,6 +88,8 @@ public class ViewMain extends JFrame implements ActionListener,
 						name.endsWith(".AVI") ||
 						name.endsWith(".mp4") ||
 						name.endsWith(".MP4") ||
+						name.endsWith(".mov") ||
+						name.endsWith(".MOV") ||
 						f.isDirectory()) {
 					return true;
 				} else {

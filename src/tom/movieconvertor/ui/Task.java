@@ -40,6 +40,7 @@ public class Task extends SwingWorker<Void, Void> {
 	public void done() {
 		super.done();
 		
+		
 		m_view.m_chooser.rescanCurrentDirectory();
 		m_view.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 		m_view.m_chooser.setControlButtonsAreShown(true);

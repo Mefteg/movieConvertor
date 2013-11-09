@@ -11,6 +11,7 @@ import it.sauronsoftware.jave.VideoInfo;
 
 import java.io.File;
 
+import tom.movieconvertor.main.Main;
 import tom.movieconvertor.ui.ViewMain;
 
 public class Convertor {
@@ -27,7 +28,18 @@ public class Convertor {
 	public Convertor(ViewMain _view, File _in) {
 		// TODO Auto-generated constructor stub
 		m_in = _in;
-		String newName = "tv_" + m_in.getName();
+		
+		String nameWithGoodExt = m_in.getName();
+		String[] parts = nameWithGoodExt.split("\\.");
+		if (parts.length > 1) {
+			String ext = parts[parts.length - 1];
+			int index = nameWithGoodExt.lastIndexOf(ext);
+			nameWithGoodExt = nameWithGoodExt.substring(0, index);
+			nameWithGoodExt += "avi";
+		}
+		
+		String newName = "tv_" + nameWithGoodExt;
+		
 		m_out = new File(m_in.getParent() + "/" + newName);
 		
 		m_progress = new ConvertorProgress(m_view);
